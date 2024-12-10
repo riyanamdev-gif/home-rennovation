@@ -20,12 +20,7 @@ root.render(
     <BrowserRouter>
     <div className='bg-slate-600 h-9'></div>
     <Navbar/>
-    <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/time" element={<Timeline/>}/>
-        <Route path="/collaborate" element={<Collaboration/>}/>
-        <Route path="/budget" element={<Budgettracker/>}/>
-      </Routes>
+    <App/>
   <Footer/>
     </BrowserRouter>
   </React.StrictMode>

@@ -64,13 +64,14 @@ const Budgettracker = () => {
     }
 
     return (
-         <div className="flex flex-col px-20  py-20 gap-5 bg-teal-900 text-white  lg:flex lg:flex-col ">
-            <div className='flex border-2 border-red-800 gap-20'>
-                <div className="flex flex-col gap-5 w-[50%] border-2 border-white">
-                <h1 className="text-4xl font-bold">Budget Tracker</h1>
-                    <label className="text-2xl">Renovation Area:</label>
+        <div className=" px-5 py-10 flex flex-col md:px-10 md:py-10 gap-5 bg-teal-900 text-white lg:px-20 lg:py-20">
+            <div className="flex flex-col gap-5 lg:flex-row">
+                {/* Left Panel */}
+                <div className="flex flex-col gap-5 w-full lg:w-1/2">
+                    <h1 className="text-3xl font-bold">Budget Tracker</h1>
+                    <label className="text-xl">Renovation Area:</label>
                     <select
-                        className="border-black w-[50%] p-2 text-black"
+                        className="border border-black p-2 text-black"
                         value={selectedArea}
                         onChange={(e) => handleAreaChange(e.target.value)}
                     >
@@ -80,55 +81,50 @@ const Budgettracker = () => {
                         ))}
                     </select>
 
-                    <div className='object-fit border-2 border-indigo-800'>
-                        <h1 className="text-2xl">Dimensions</h1>
-                        <table className="mt-5">
-                            <tbody>
-                                <tr className="flex justify-around">
-                                    <th><label htmlFor="width">Width(m)</label></th>
-                                    <th><label htmlFor="height">Height(m)</label></th>
-                                </tr>
-                                <tr className="flex gap-4">
-                                    <th>
-                                        <input
-                                            className="text-black p-1 font-normal"
-                                            type="number"
-                                            value={dimensions.width}
-                                            onChange={(e) => handleDimension('width', e.target.value)}
-                                        />
-                                    </th>
-                                    <th>
-                                        <input
-                                            className="text-black p-1 font-normal"
-                                            type="number"
-                                            value={dimensions.height}
-                                            onChange={(e) => handleDimension('height', e.target.value)}
-                                        />
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
+                    {/* Dimensions */}
+                    <div className="">
+                        <h2 className="text-xl font-semibold">Dimensions</h2>
+                        <div className="grid grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <label htmlFor="width">Width (m)</label>
+                                <input
+                                    className="block w-full border p-2 text-black"
+                                    type="number"
+                                    value={dimensions.width}
+                                    onChange={(e) => handleDimension('width', e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="height">Height (m)</label>
+                                <input
+                                    className="block w-full border p-2 text-black"
+                                    type="number"
+                                    value={dimensions.height}
+                                    onChange={(e) => handleDimension('height', e.target.value)}
+                                />
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="flex flex-col   mt-2">
-                        <div className="flex gap-[150px] text-2xl">
-                            <p>Expenses</p>
-                            <p className="pl-4">Estimated Cost</p>
-                            <p className="pr-6">Actual Cost</p>
-                        </div>
-
+                    {/* Expenses */}
+                    <div className="flex flex-col gap-4">
+                       <div className='flex  justify-between '>
+                       <h2 className="text-xl font-semibold">Expenses</h2>
+                        <h2 className="text-xl font-semibold">Estimated Cost</h2>
+                        <h2 className="text-xl font-semibold">Actual Cost</h2>
+                       </div>
                         {expenses.map((item, index) => (
-                            <div key={index} className="flex justify-between gap-5  items-center p-2">
+                            <div key={index} className="flex justify-between items-center">
                                 <p className="w-1/3">{item}</p>
                                 <input
                                     type="number"
-                                    className="w-1/3 p-1 text-black"
+                                    className="w-1/3 p-2 text-black border mr-2"
                                     value={estimatedCosts[item] || ''}
                                     onChange={(e) => handleCostChange('estimated', item, e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    className="w-1/3 p-1 text-black"
+                                    className=" w-1/3 p-2 text-black border"
                                     value={actualCosts[item] || ''}
                                     onChange={(e) => handleCostChange('actual', item, e.target.value)}
                                 />
@@ -136,44 +132,47 @@ const Budgettracker = () => {
                         ))}
                     </div>
                     <button
-                        className="mt-5 text-xl  uppercase text-black p-4 px-12 rounded-lg shadow-lg bg-gradient-to-r from-[#ee9ca7] via-[#ffdde1] to-[#ee9ca7] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center]"
+                        className="mt-5 text-xl uppercase p-3 rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-black shadow-lg hover:opacity-90"
                         onClick={handleAddRecord}
                     >
                         Add Record
                     </button>
-            </div>
-                <div className='w-[30%] border-2 border-pink-500 lg:w-[50%] md:w-[50%]'>
-                    <img src="/images/vas.png" alt="" className=''/>
                 </div>
-                </div>
-               
 
-            <div className="mt-10 mr-20 mb-10">
-                <h2 className="text-3xl font-bold mb-4">Renovation Details</h2>
-                <div className="border-t-2"></div>
-                <table className="table-auto w-full text-white mt-3">
-                    <thead>
-                        <tr>
-                            <th className="px-4 py-2 font-light text-2xl">Renovation Area</th>
-                            <th className="px-4 py-2 font-light text-2xl">Area (m²)</th>
-                            <th className="px-4 py-2 font-light text-2xl">Total Estimated Cost</th>
-                            <th className="px-4 py-2 font-light text-2xl">Total Actual Cost</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {records.map((record, index) => (
-                            <tr key={index}>
-                                <td className="px-4 py-2">{record.areas}</td>
-                                <td className="px-4 py-2">{record.area}</td>
-                                <td className="px-4 py-2">{record.estimatedCost}</td>
-                                <td className="px-4 py-2">{record.actualCost}</td>
+                {/* Right Panel */} 
+                <div className="hidden lg:flex md:hidden justify-center w-full lg:w-1/2">
+                    <img src="/images/vas.png" alt="Renovation" className="max-w-full h-auto rounded-lg" />
+                </div>
+            </div>
+
+            {/* Records Table */}
+            <div className="mt-10">
+                <h2 className="text-2xl font-bold mb-4">Renovation Details</h2>
+                <div className="overflow-x-auto">
+                    <table className="table-auto w-full text-white">
+                        <thead>
+                            <tr>
+                                <th className="px-4 py-2">Renovation Area</th>
+                                <th className="px-4 py-2">Area (m²)</th>
+                                <th className="px-4 py-2">Total Estimated Cost</th>
+                                <th className="px-4 py-2">Total Actual Cost</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {records.map((record, index) => (
+                                <tr key={index}>
+                                    <td className="px-4 py-2">{record.areas}</td>
+                                    <td className="px-4 py-2">{record.area}</td>
+                                    <td className="px-4 py-2">{record.estimatedCost}</td>
+                                    <td className="px-4 py-2">{record.actualCost}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Budgettracker;

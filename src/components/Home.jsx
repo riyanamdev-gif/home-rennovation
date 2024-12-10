@@ -21,38 +21,7 @@ const Home = () => {
           <p className='font-light px-3'> Simplify your home renovation journey with a powerful planner designed to organize, track, and visualize every step of your project. Let’s turn your vision into reality!"</p>
         </div>
       </div>
-      {/* budget tracker
-      <div className='flex flex-col gap-5  py-14 px-4'>
-        <div className='self-center '>
-          <p className='text-3xl text-center leading-relaxed '>Track every penny, </p>
-          <p className='text-3xl text-center'>Build your dream home with confidence.</p>
-          <p className='font-light text-xl leading-loose text-center '>Our budget tracker ensures you know where every dollar goes, so you can focus on creating the home you’ve always wanted.</p>
-        </div>
-        <div className='lg:grid lg:grid-cols-3 lg:self-center flex flex-col gap-2 px-20 md:grid md:grid-cols-3'>
-          <img src="/images/welcomepic.jpg" alt="" className='lg:w-[300px] lg:mt-20 md:w-[300px] md:mt-20' />
-          <img src="/images/longimg1.jpg" alt="" className='lg:w-[300px]  md:w-[300px]' />
-          <img src="/images/welcomepic2.jpg" alt="" className='lg:w-[400px] lg:mt-20 md:w-[400px] mt-20'/>
-        </div>
-        <div className='self-center mt-[20px]'>
-          <NavLink to="/budget">{btn}</NavLink>
-        </div>
-      </div>
-
-       project timeline 
-      <div className='flex px-20 py-10'>
-        <div className=' flex flex-col border-2 border-green-800 px-2 py-2 gap-2 '>
-          <p className='text-4xl '>From start to finish, </p>
-          <p className='text-4xl'>stay on track with a clear timeline.</p>
-          <p className='font-light text-2xl'>Our timeline tool keeps you informed at every stage, so your renovation stays on schedule.</p>
-        </div>
-        <div>
-          <div>
-            <img src="" alt="" />
-            </div>
-
-
-        </div>
-      </div>  */}
+   
     </div>
 
 
@@ -60,3 +29,4 @@ const Home = () => {
 }
 
 export default Home
+

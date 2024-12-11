@@ -24,7 +24,7 @@ const Collaboration = () => {
     </a>
 
     return (
-        <div className='flex px-20 py-10 gap-10 w-full  bg-fuchsia-100 '>
+        <div className='flex lg:px-20 lg:py-10 md:px-10 md:py-10 px-5 py-5 gap-10 w-full  bg-fuchsia-100 '>
             <div className=' w-full  flex px-4 py-4 gap-5  flex-col md:flex-col lg:flex-col'>
                 <header className='text-4xl font-semibold '>Chat</header>
                 <div className=' bg-white mb-5 rounded-lg h-64 p-2 overflow-y-auto shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)]'>

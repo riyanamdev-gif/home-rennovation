@@ -107,7 +107,7 @@ const Timeline = () => {
               Add Task
             </button>
           </div>
-          <div className='w-[450px] h-[450px]  relative'>
+          <div className='w-[450px] h-[450px]  relative hidden md:inline ld:inline'>
             <div className='inset-0 bg-black  rotate-45 transform scale-75 absolute '></div>
             <div className='absolute inset-0 flex justify-center items-center '>
               <img src="/images/todo.jpg" alt="" className="transform rotate-360 w-[300px] h-[300px]"/>
